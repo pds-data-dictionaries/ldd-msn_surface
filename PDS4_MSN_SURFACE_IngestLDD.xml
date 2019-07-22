@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.sch"
+    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<Ingest_LDD 
-    xmlns="http://pds.nasa.gov/pds4/pds/v1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:msn="http://pds.nasa.gov/pds4/mission/msn/v1" 
-    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
-    xsi:schemaLocation="https://pds.nasa.gov/pds4/pds/v1 
-    https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1900.xsd">
-    <name>Surface Mission</name>
-    <ldd_version_id>1.0.0.0</ldd_version_id>
-    <full_name>Cristina De Cesare</full_name>
-    <steward_id>img</steward_id>
-    <namespace_id>msn_surface</namespace_id>
-    <last_modification_date_time>2018-05-21T11:02:00</last_modification_date_time>
-  
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:msn="http://pds.nasa.gov/pds4/msn/v1" xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+  xsi:schemaLocation="https://pds.nasa.gov/pds4/pds/v1 
+    https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd">
+  <name>Surface Mission</name>
+  <ldd_version_id>1.1.0.0</ldd_version_id>
+  <full_name>Cristina De Cesare</full_name>
+  <steward_id>img</steward_id>
+  <namespace_id>msn_surface</namespace_id>
+  <comment>
+    ## CHANGE LOG ##
+    1.0.0.0
+    - Initial version
+    
+    1.1.0.0
+    - Upgraded to v1B00 of the IM.
+    - Re-classified this dictionary as a Discipline Dictionary, instead of Mission Dictionary.
+    - Renamed Surface_Mission_Parameters to Surface_Mission_Information, Command_Execution_Information to Command_Execution, and
+      Telemetry_Information to Telemetry.
+  </comment>
+  <last_modification_date_time>2019-05-02T14:00:00</last_modification_date_time>
+
   <!-- Begin attribute definitions -->
-  
-  <!-- Start attributes for Surface_Mission_Parameters -->
+
+  <!-- Start attributes for Surface_Mission_Information -->
   <DD_Attribute>
     <name>surface_gravity</name>
     <version_id>1.0</version_id>
@@ -36,9 +45,9 @@
       <specified_unit_id>m/s**2</specified_unit_id>
     </DD_Value_Domain>
   </DD_Attribute>
-  <!-- End attributes for Surface_Mission_Parameters -->
-  
-  <!-- Start attributes for Command_Execution_Information -->
+  <!-- End attributes for Surface_Mission_Information -->
+
+  <!-- Start attributes for Command_Execution -->
   <DD_Attribute>
     <name>sequence_id</name>
     <version_id>1.0</version_id>
@@ -120,7 +129,7 @@
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  
+
   <DD_Attribute>
     <name>command_source_id</name>
     <version_id>1.0</version_id>
@@ -137,10 +146,10 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  <!-- End attributes for Command_Execution_Information -->
-  
-  
-  <!-- Start attributes for Telemetry_Information -->
+  <!-- End attributes for Command_Execution -->
+
+
+  <!-- Start attributes for Telemetry -->
   <DD_Attribute>
     <name>application_id</name>
     <version_id>0.1</version_id>
@@ -412,32 +421,32 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  <!-- End attributes for Telemetry_Information -->
-  
-  
-  <!-- End attribute definitions --> 
+  <!-- End attributes for Telemetry -->
+
+
+  <!-- End attribute definitions -->
 
 
 
   <!-- Begin class definitions -->
-  
-  <!-- Start of Surface_Mission_Parameters class Definition -->
+
+  <!-- Start of Surface_Mission_Information class Definition -->
   <DD_Class>
-    <name>Surface_Mission_Parameters</name>
+    <name>Surface_Mission_Information</name>
     <version_id>1.0</version_id>
-    <local_identifier>Surface_Mission_Parameters</local_identifier>
+    <local_identifier>Surface_Mission_Information</local_identifier>
     <submitter_name>Jordan Padams</submitter_name>
-    <definition>The Surface_Mission_Parameters class contains attributes specific to surface missions 
+    <definition>The Surface_Mission_Information class contains attributes specific to surface missions 
       which apply across instrument types.</definition>
     <element_flag>true</element_flag>
     <DD_Association>
-      <identifier_reference>Command_Execution_Information</identifier_reference>
+      <identifier_reference>Command_Execution</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>Telemetry_Information</identifier_reference>
+      <identifier_reference>Telemetry</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -449,15 +458,15 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
-  <!-- End of Surface_Mission_Parameters class Definition -->
-  
-  <!-- Start of Command_Execution_Information Class Definition -->
+  <!-- End of Surface_Mission_Information class Definition -->
+
+  <!-- Start of Command_Execution Class Definition -->
   <DD_Class>
-    <name>Command_Execution_Information</name>
+    <name>Command_Execution</name>
     <version_id>1.0</version_id>
-    <local_identifier>Command_Execution_Information</local_identifier>
+    <local_identifier>Command_Execution</local_identifier>
     <submitter_name>Jordan Padams</submitter_name>
-    <definition>The Command_Execution_Information class contains information about how the command 
+    <definition>The Command_Execution class contains information about how the command 
       that acquired this data was executed, such as sequence or activity.</definition>
     <DD_Association>
       <identifier_reference>sequence_id</identifier_reference>
@@ -501,16 +510,16 @@
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
-  </DD_Class>  
-  <!-- End of Command_Execution_Information Class Definition -->
-  
-  <!-- Start of Telemetry_Information Class Definition -->
+  </DD_Class>
+  <!-- End of Command_Execution Class Definition -->
+
+  <!-- Start of Telemetry Class Definition -->
   <DD_Class>
-    <name>Telemetry_Information</name>
+    <name>Telemetry</name>
     <version_id>1.0</version_id>
-    <local_identifier>Telemetry_Information</local_identifier>
+    <local_identifier>Telemetry</local_identifier>
     <submitter_name>Cristina De Cesare</submitter_name>
-    <definition>The Telemetry_Information class contains downlink-related attributes 
+    <definition>The Telemetry class contains downlink-related attributes 
       used primarily during mission operations.</definition>
     <DD_Association>
       <identifier_reference>application_id</identifier_reference>
@@ -615,34 +624,44 @@
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
-  <!-- End of Telemetry_Information Class Definition -->
-  
-  
+  <!-- End of Telemetry Class Definition -->
+
+
   <!-- End class definitions -->
-  
-  
+
+
   <!-- Begin rule definitions -->
   
+  <!-- TODO make this specific to InSight? 
+    Is there some way to have this rule only trigger when some attribute from another namespace is "InSight"? -->
+  <!--
   <DD_Rule>
     <local_identifier>application_name_value_check</local_identifier>
-    <rule_context>//msn_surface:Telemetry_Information</rule_context>
+    <rule_context>//msn_surface:Telemetry</rule_context>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>msn_surface:application_name = ('ICC_1', 'ICC_2', 'ICC_3', 'ICC_4', 'ICC_5', 'ICC_6', 'ICC_UNRECOG', 'IDC_1', 'IDC_2', 'IDC_3', 'IDC_4', 'IDC_5', 'IDC_6', 'IDC_UNRECOG')</rule_test>
-      <rule_message>MSN_SURFACE:error:application_name_value_check: The attribute msn_surface:application_name must be equal to one of the following values: 'ICC_1', 'ICC_2', 'ICC_3', 'ICC_4', 'ICC_5', 'ICC_6', 'ICC_UNRECOG', 'IDC_1', 'IDC_2', 'IDC_3', 'IDC_4', 'IDC_5', 'IDC_6', 'IDC_UNRECOG'.</rule_message>
+      <rule_test>msn_surface:application_name = ('ICC_1', 'ICC_2', 'ICC_3', 'ICC_4', 'ICC_5',
+        'ICC_6', 'ICC_UNRECOG', 'IDC_1', 'IDC_2', 'IDC_3', 'IDC_4', 'IDC_5', 'IDC_6',
+        'IDC_UNRECOG')</rule_test>
+      <rule_message>MSN_SURFACE:error:application_name_value_check: The attribute
+        msn_surface:application_name must be equal to one of the following values: 'ICC_1', 'ICC_2',
+        'ICC_3', 'ICC_4', 'ICC_5', 'ICC_6', 'ICC_UNRECOG', 'IDC_1', 'IDC_2', 'IDC_3', 'IDC_4',
+        'IDC_5', 'IDC_6', 'IDC_UNRECOG'.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   <DD_Rule>
     <local_identifier>provider_id_value_check</local_identifier>
-    <rule_context>//msn_surface:Telemetry_Information</rule_context>
+    <rule_context>//msn_surface:Telemetry</rule_context>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>msn_surface:provider_id = ('TTACS')</rule_test>
-      <rule_message>MSN_SURFACE:error:provider_id_value_check: The attribute msn_surface:provider_id must be equal to one of the following values: 'TTACS'.</rule_message>
+      <rule_message>MSN_SURFACE:error:provider_id_value_check: The attribute msn_surface:provider_id
+        must be equal to one of the following values: 'TTACS'.</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
+  -->
 
-  
+
   <!-- End rule definitions -->
-    
+
 </Ingest_LDD>

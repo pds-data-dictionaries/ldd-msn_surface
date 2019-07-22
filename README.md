@@ -11,6 +11,7 @@ The build process ensures compatibility of the LDD with the core information mod
 
 This LDD has been released for the following versions of the PDS4 information model:
 
+- [PDS4 IM v1.11.0.0 (MSN_SURFACE LDD v1.1.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.1.0.0)
 - [PDS4 IM v1.10.1.0 (MSN_SURFACE LDD v1.0.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.0.0.0)
 
 
