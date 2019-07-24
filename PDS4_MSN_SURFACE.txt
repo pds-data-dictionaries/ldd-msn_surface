@@ -2,12 +2,12 @@ PDS4 Local Data Dictionary Processing Report
 
 Configuration:
    LDDTool Version        0.2.2.3
-   LDD Version Id:        1.1.0.0
+   LDD Version Id:        1.1.1.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu May 02 14:12:20 PDT 2019
+   Time                   Tue Jul 23 19:22:10 PDT 2019
    Common Schema          [PDS4_PDS_1B00.xsd]
    Common Schematron      [PDS4_PDS_1B00.sch]
    IM Version Id:         1.11.0.0
@@ -20,7 +20,7 @@ Configuration:
    IM Document Spec       [DMDocument.pins]
 
 Parameters:
-   Input File             [PDS4_MSN_SURFACE_IngestLDD_1B00.xml]
+   Input File             [PDS4_MSN_SURFACE_IngestLDD.xml]
    PDS Processing         true
    LDD Processing         true
    Discipline LDD         true
@@ -34,7 +34,7 @@ Summary:
    Associations           27
    Error messages         0
    Warning messages       1
-   Information messages   13
+   Information messages   11
 
 Detailed validation messages
    WARNING  Header:  - New namespace id has been specified:msn_surface
@@ -47,14 +47,12 @@ Detailed validation messages
    INFO     Attribute: <transport_protocol> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <earth_received_start_date_time> - This local attribute has a duplicate in the PDS4 data dictionary.
    INFO     Attribute: <earth_received_stop_date_time> - This local attribute has a duplicate in the PDS4 data dictionary.
-   INFO     Attribute: <download_priority> - The default minimum value provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <download_priority> - The default maximum value provided by the attribute's data type is being overridden with 6
    INFO     Attribute: <expected_packets> - This local attribute has a duplicate in the PDS4 data dictionary.
    INFO     Attribute: <received_packets> - This local attribute has a duplicate in the PDS4 data dictionary.
 
 Parsed Input - Header:
    LDD Name               Surface Mission
-   LDD Version            1.1.0.0
+   LDD Version            1.1.1.0
    Full Name              Cristina De Cesare
    Steward                img
    Namespace Id           msn_surface
@@ -68,8 +66,11 @@ Parsed Input - Header:
     - Re-classified this dictionary as a Discipline Dictionary, instead of Mission Dictionary.
     - Renamed Surface_Mission_Parameters to Surface_Mission_Information, Command_Execution_Information to Command_Execution, and
       Telemetry_Information to Telemetry.
+      
+    1.1.1.0
+    - Fixed bugs in download_priority attribute: removed min and max value constraints, made definition more generic.
   
-   Last Modification Time 2019-05-02T14:00:00
+   Last Modification Time 2019-07-23T19:19:00
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -197,9 +198,7 @@ Parsed Input - Attributes:
    name                   download_priority
    version                1.11
    value data type        ASCII_NonNegative_Integer
-   description             The download_priority attribute specifies which data to downlink/transmit, based on order of importance. The lower numerical priority (higher-ranked number) data products are transmitted before higher numerical priority (lower-ranked number) data products. For example, an image with a downlink priority of 1 will be transmitted before an image with a downlink priority of 6. Value of 0 specifies use of on-board default.
-   minimum value          1
-   maximum value          6
+   description            The download_priority attribute specifies which data to downlink/transmit, based on order of importance. The ranking and meaning of specific values will vary depending on the mission, and should be defined in the mission software interface specification (SIS).
 
    name                   data_size
    version                1.11

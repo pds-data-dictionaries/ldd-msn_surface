@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.11.0.0" ,
-      "Date": "Thu May 02 18:34:24 PDT 2019" ,
+      "Date": "Tue Jul 23 19:22:10 PDT 2019" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -772,15 +772,15 @@
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
             "versionId": "1.11" ,
-            "description": " The download_priority attribute specifies which data to downlink\/transmit, based on order of importance. The lower numerical priority (higher-ranked number) data products are transmitted before higher numerical priority (lower-ranked number) data products. For example, an image with a downlink priority of 1 will be transmitted before an image with a downlink priority of 6. Value of 0 specifies use of on-board default." ,
+            "description": "The download_priority attribute specifies which data to downlink\/transmit, based on order of importance. The ranking and meaning of specific values will vary depending on the mission, and should be defined in the mission software interface specification (SIS)." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
             "maximumCharacters": "Unbounded" ,
-            "minimumValue": "1" ,
-            "maximumValue": "6" ,
+            "minimumValue": "0" ,
+            "maximumValue": "18446744073709551615" ,
             "pattern": "[0-9]+" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,

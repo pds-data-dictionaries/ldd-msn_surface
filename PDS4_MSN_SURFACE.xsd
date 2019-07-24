@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.1.0.0 - Thu May 02 14:12:20 PDT 2019 -->
+  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.1.1.0 - Tue Jul 23 19:22:10 PDT 2019 -->
   <!-- Generated from the PDS4 Information Model Version 1.11.0.0 - System Build 9a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.11.0.0 - pds: - Common Dictionary - N/A                                 -->
-  <!-- 1.1.0.0 - msn_surface: - Surface Mission - PDS4_MSN_SURFACE_IngestLDD_1B0 -->
+  <!-- 1.1.1.0 - msn_surface: - Surface Mission - PDS4_MSN_SURFACE_IngestLDD.xml -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/msn_surface/v1"
@@ -13,7 +13,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.1.0.0">
+    version="1.1.1.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1B00.xsd"/>
  
@@ -29,6 +29,9 @@
     - Re-classified this dictionary as a Discipline Dictionary, instead of Mission Dictionary.
     - Renamed Surface_Mission_Parameters to Surface_Mission_Information, Command_Execution_Information to Command_Execution, and
       Telemetry_Information to Telemetry.
+      
+    1.1.1.0
+    - Fixed bugs in download_priority attribute: removed min and max value constraints, made definition more generic.
   
     </xs:documentation>
   </xs:annotation>
@@ -193,19 +196,16 @@
 
   <xs:simpleType name="download_priority">
     <xs:annotation>
-      <xs:documentation> The download_priority attribute specifies which
+      <xs:documentation>The download_priority attribute specifies which
         data to downlink/transmit, based on order of importance. The
-        lower numerical priority (higher-ranked number) data products
-        are transmitted before higher numerical priority (lower-ranked
-        number) data products. For example, an image with a downlink
-        priority of 1 will be transmitted before an image with a
-        downlink priority of 6. Value of 0 specifies use of on-board
-        default.</xs:documentation>
+        ranking and meaning of specific values will vary depending on
+        the mission, and should be defined in the mission software
+        interface specification (SIS).</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_NonNegative_Integer">
     	<xs:pattern value='[0-9]+'/>
-     <xs:minInclusive value="1"/>
-     <xs:maxInclusive value="6"/>
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="18446744073709551615"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -441,7 +441,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.11.0.0" ,
-      "Date": "Thu May 02 14:12:20 PDT 2019" ,
+      "Date": "Tue Jul 23 19:22:10 PDT 2019" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "PropertyMapDictionary": [
       ]
