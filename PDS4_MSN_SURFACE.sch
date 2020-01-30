@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.1.0.0 - Thu May 02 14:12:20 PDT 2019 -->
-  <!-- Generated from the PDS4 Information Model Version 1.11.0.0 - System Build 9a -->
+  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.1.1.0 - Wed Jan 29 17:20:37 PST 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
   <sch:title>Schematron using XPath 2.0</sch:title>
 
+  <sch:ns uri="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
   <sch:ns uri="http://pds.nasa.gov/pds4/msn_surface/v1" prefix="msn_surface"/>
 
