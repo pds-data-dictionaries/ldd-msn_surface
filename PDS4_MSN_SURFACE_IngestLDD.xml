@@ -25,6 +25,7 @@
       Telemetry_Information to Telemetry.
       
     1.1.1.0
+    - Upgraded to v1D00 of the IM.
     - Fixed bugs in download_priority attribute: removed min and max value constraints, made definition more generic.
   </comment>
   <last_modification_date_time>2019-07-23T19:19:00</last_modification_date_time>

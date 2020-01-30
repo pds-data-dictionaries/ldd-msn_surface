@@ -2,8 +2,8 @@
   {
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.11.0.0" ,
-      "Date": "Tue Jul 23 19:22:10 PDT 2019" ,
+      "Version": "1.13.0.0" ,
+      "Date": "Wed Jan 29 17:20:37 PST 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -14,15 +14,18 @@
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
             "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
             "description": "The Command_Execution class contains information about how the command that acquired this data was executed, such as sequence or activity."
               , "associationList": [
              {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.sequence_id" ,
-                "title": "null" ,
+                "title": "sequence_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
@@ -33,11 +36,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.sequence_version_id" ,
-                "title": "null" ,
+                "title": "sequence_version_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
@@ -48,11 +52,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.sequence_execution_count" ,
-                "title": "null" ,
+                "title": "sequence_execution_count" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1030" ,
@@ -63,11 +68,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.command_sequence_number" ,
-                "title": "null" ,
+                "title": "command_sequence_number" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1040" ,
@@ -78,11 +84,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.command_source_id" ,
-                "title": "null" ,
+                "title": "command_source_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1050" ,
@@ -93,11 +100,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.observation_id" ,
-                "title": "null" ,
+                "title": "observation_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1060" ,
@@ -108,11 +116,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.request_id" ,
-                "title": "null" ,
+                "title": "request_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1070" ,
@@ -132,15 +141,18 @@
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
             "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
             "description": "The Surface_Mission_Information class contains attributes specific to surface missions which apply across instrument types."
               , "associationList": [
              {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Surface_Mission_Information.msn_surface.surface_gravity" ,
-                "title": "null" ,
+                "title": "surface_gravity" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1030" ,
@@ -151,31 +163,33 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Surface_Mission_Information.msn_surface.Command_Execution" ,
-                "title": "null" ,
+                "title": "Command_Execution" ,
                 "assocType": "component_of" ,
                 "isAttribute": "false" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
                 "classId": [
-                   "0001_NASA_PDS_1.msn_surface.Command_Execution"
+                  "0001_NASA_PDS_1.msn_surface.Command_Execution"
                  ]
               }
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Surface_Mission_Information.msn_surface.Telemetry" ,
-                "title": "null" ,
+                "title": "Telemetry" ,
                 "assocType": "component_of" ,
                 "isAttribute": "false" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
                 "classId": [
-                   "0001_NASA_PDS_1.msn_surface.Telemetry"
+                  "0001_NASA_PDS_1.msn_surface.Telemetry"
                  ]
               }
             }
@@ -190,15 +204,18 @@
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
             "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
             "description": "The Telemetry class contains downlink-related attributes used primarily during mission operations."
               , "associationList": [
              {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.application_id" ,
-                "title": "null" ,
+                "title": "application_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1010" ,
@@ -209,11 +226,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.application_subtype_id" ,
-                "title": "null" ,
+                "title": "application_subtype_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1020" ,
@@ -224,11 +242,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.application_name" ,
-                "title": "null" ,
+                "title": "application_name" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1030" ,
@@ -239,11 +258,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.provider_id" ,
-                "title": "null" ,
+                "title": "provider_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1040" ,
@@ -254,11 +274,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.flight_software_version_id" ,
-                "title": "null" ,
+                "title": "flight_software_version_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1050" ,
@@ -269,11 +290,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_name" ,
-                "title": "null" ,
+                "title": "telemetry_source_name" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1060" ,
@@ -284,11 +306,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.transport_protocol" ,
-                "title": "null" ,
+                "title": "transport_protocol" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1070" ,
@@ -299,11 +322,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.communication_session_id" ,
-                "title": "null" ,
+                "title": "communication_session_id" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1080" ,
@@ -314,11 +338,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_start_time" ,
-                "title": "null" ,
+                "title": "telemetry_source_start_time" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1090" ,
@@ -329,11 +354,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_sclk_start" ,
-                "title": "null" ,
+                "title": "telemetry_source_sclk_start" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1100" ,
@@ -344,11 +370,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.product_completion_status" ,
-                "title": "null" ,
+                "title": "product_completion_status" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1110" ,
@@ -359,11 +386,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.earth_received_start_date_time" ,
-                "title": "null" ,
+                "title": "earth_received_start_date_time" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1120" ,
@@ -374,11 +402,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.earth_received_stop_date_time" ,
-                "title": "null" ,
+                "title": "earth_received_stop_date_time" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1130" ,
@@ -389,11 +418,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.download_priority" ,
-                "title": "null" ,
+                "title": "download_priority" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1140" ,
@@ -404,11 +434,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.data_size" ,
-                "title": "null" ,
+                "title": "data_size" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1150" ,
@@ -419,11 +450,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.expected_packets" ,
-                "title": "null" ,
+                "title": "expected_packets" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1160" ,
@@ -434,11 +466,12 @@
             }
            , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.received_packets" ,
-                "title": "null" ,
+                "title": "received_packets" ,
                 "assocType": "attribute_of" ,
                 "isAttribute": "true" ,
                 "isChoice": "false" ,
                 "isAny": "false" ,
+                "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
                 "classOrder": "1170" ,
@@ -459,10 +492,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The command_sequence_number attribute provides a numeric identifier for a sequence of commands sent to a spacecraft or instrument." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -483,10 +517,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": " The command_source_id attribute specifies the flight software element that was the source of a particular command. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -507,10 +542,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The observation_id specifies a unique identifier for a scientific observation within a data set." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -531,10 +567,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The request_id is used to group related datasets together by science or engineering application or theme, such as frames in a mosaic." ,
             "isNillable": "true" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -555,10 +592,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The sequence_execution_count specifies how many times this sequence has executed since the last reset of the flight computer." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -579,10 +617,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The sequence_id identifies the command sequence used to acquire this product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -603,10 +642,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The sequence_version_id identifies which of potentially several versions of a sequence_id were used to acquire this product." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -627,10 +667,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The surface_gravity attribute specifies the acceleration of gravity (magnitude, not direction)." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Real" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Real" ,
             "minimumCharacters": "Unbounded" ,
@@ -651,10 +692,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The application_id (often abbreviated APID) attribute identifies the process, or source, which created the data. This can include information such as an identification of the instrument which generated the telemetry stream, its operating mode at the time of data acquisition, and any onboard compression of the data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -675,10 +717,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The application_name attribute provides the name associated with the source or process which created the data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -699,10 +742,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The application_subtype_id attribute provides further distinction (i.e., greater specificity) among application_id types." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -723,10 +767,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "Identifies the communication session used to acquire this data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -747,10 +792,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The data_size specifies number of bytes in the compressed data stream, not including headers." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -771,10 +817,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The download_priority attribute specifies which data to downlink\/transmit, based on order of importance. The ranking and meaning of specific values will vary depending on the mission, and should be defined in the mission software interface specification (SIS)." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -795,10 +842,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The earth_received_start_date_time attribute provides the earliest time at which any component telemetry data for a particular product was received." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Date_Time_YMD_UTC" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Date_Time_YMD_UTC" ,
             "minimumCharacters": "Unbounded" ,
@@ -819,10 +867,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The earth_received_stop_date_time attribute provides the latest time at which any component telemetry data for a particular product was received." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Date_Time_YMD_UTC" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Date_Time_YMD_UTC" ,
             "minimumCharacters": "Unbounded" ,
@@ -843,10 +892,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The expected_packets attribute provides the total number of telemetry packets which constitute a complete data product, i.e., a data product without missing data." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -867,10 +917,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The flight_software_version_id attribute identifies the version of the instrument flight software used to acquire the image." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -891,10 +942,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The product_completion_status attribute indicates whether or not a product is complete or is in one of a number of incomplete states. Sample values might indicate that all portions of the product have been downlinked and received correctly, that all portions have not yet been received, or that the product contains transmission errors. The specific values are mission-dependent." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -906,18 +958,6 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
-          , "PermissibleValueList": [
-              {"PermissibleValue": {
-                  "value": "PARTIAL" ,
-                  "valueMeaning": "partially downlinked product"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "COMPLETE" ,
-                  "valueMeaning": "complete downlinked product"
-                }
-             }
-           ]
           }
         }
       , {
@@ -927,10 +967,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The provider_id attribute identifies the organization or subsystem that supplied the telemetry data product to the producer of the raw (EDR) PDS data product. This is typically (but not always) the organization responsible for reassembling packetized data into a single product. These may vary by mission so the permissible values should be set by the mission dictionaries. " ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -951,10 +992,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The received_packets attribute provides the total number of telemetry packets actually used to construct this data product. cf. expected_packets." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_NonNegative_Integer" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_NonNegative_Integer" ,
             "minimumCharacters": "Unbounded" ,
@@ -975,10 +1017,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The telemetry_source_name specifies the name source of the telemetry data described in the parent class." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -999,10 +1042,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The telemetry_source_sclk_start attribute specifies the value of the spacecraft clock (in seconds) at the creation time of the source product from which this product was derived." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -1023,10 +1067,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The telemetry_source_start_time specifies the creation time of the source product from which this product was derived. It is the same as the telemetry_source_sclk_start converted to Spacecraft Event Time (SCET)." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Date_Time_YMD_UTC" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Date_Time_YMD_UTC" ,
             "minimumCharacters": "Unbounded" ,
@@ -1047,10 +1092,11 @@
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
             "nameSpaceId": "msn_surface" ,
             "steward": "img" ,
-            "versionId": "1.11" ,
+            "versionId": "1.13" ,
             "description": "The transport_protocol attribute specifies the protocol used in the creation of the telemetry data products by the subsystem which generates the telemetry stream. " ,
             "isNillable": "false" ,
             "isEnumerated": "true" ,
+            "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
             "minimumCharacters": "1" ,
@@ -1062,22 +1108,8 @@
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
             "defaultUnitId": "null"
-          , "PermissibleValueList": [
-              {"PermissibleValue": {
-                  "value": "SFDU" ,
-                  "valueMeaning": "Standard Formatted Data Unit"
-                }
-             }
-            , {"PermissibleValue": {
-                  "value": "Data Product" ,
-                  "valueMeaning": "A complete file of raw telemetry as delivered from the spacecraft to the ground."
-                }
-             }
-           ]
           }
         }
-      ]
-    , "PropertyMapDictionary": [
       ]
     }
   }
