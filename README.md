@@ -8,7 +8,7 @@ Steward: [IMG Node](https://pds-imaging.jpl.nasa.gov/)
 
 Only one LDD source version is kept such that it can be managed by github.
 
-- [1.D.0.0](src)
+- [1.D.0.0_1.2.0.0](src)
 
 ## Versions
 
@@ -19,6 +19,7 @@ The build process insures compatiblity of the LDD with the core information mode
 
 This LDD has been built for the following versions of the PDS4 information models.
 
+- [1.D.0.0_1.2.0.0](build/1.D.0.0_1.2.0.0)
 - [1.D.0.0_1.1.1.0](build/1.D.0.0_1.1.1.0)
 - older versions available as tagged releases
 
@@ -26,6 +27,7 @@ This LDD has been built for the following versions of the PDS4 information model
 
 This LDD has been tagged for release for the following versions of the PDS4 information model:
 
+- [PDS4 IM v1.D.0.0  (MSN SURFACE LDD v1.2.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.2.0.0)
 - [PDS4 IM v1.D.0.0  (MSN SURFACE LDD v1.1.1.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.1.1.0)
 - [PDS4 IM v1.11.0.0 (MSN_SURFACE LDD v1.1.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.1.0.0)
 - [PDS4 IM v1.10.1.0 (MSN_SURFACE LDD v1.0.0.0)](https://github.com/nasa-pds-data-dictionaries/ldd-msn/releases/tag/v1.0.0.0)
