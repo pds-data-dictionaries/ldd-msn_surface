@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.13.0.0" ,
-      "Date": "Tue Mar 17 18:26:35 MST 2020" ,
+      "Date": "Wed Mar 18 13:05:17 MST 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -209,6 +209,22 @@
                  ]
               }
             }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.keyword" ,
+                "title": "keyword" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.keyword"
+                 ]
+              }
+            }
            ]
           }
         }
@@ -269,6 +285,22 @@
                 "classOrder": "1020" ,
                 "classId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Surface_Mission_Information.msn_surface.Observational_Intent" ,
+                "title": "Observational_Intent" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "classId": [
+                  "0001_NASA_PDS_1.msn_surface.Observational_Intent"
                  ]
               }
             }
@@ -798,6 +830,31 @@
             "steward": "img" ,
             "versionId": "1.13" ,
             "description": "Identifies the goal of this observation." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Text_Preserved" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Text_Preserved" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "Unbounded" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.keyword" ,
+            "title": "keyword" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.13" ,
+            "description": "Identifies geological characteristics of a feature or target." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,

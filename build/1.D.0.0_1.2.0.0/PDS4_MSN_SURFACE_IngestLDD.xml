@@ -29,9 +29,9 @@
     - Fixed bugs in download_priority attribute: removed min and max value constraints, made definition more generic.
     
     1.2.0.0, Trent Hare
-    - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes
+    - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes, keyword
   </comment>
-  <last_modification_date_time>2020-03-17T16:08:00</last_modification_date_time>
+  <last_modification_date_time>2020-03-18T13:08:00</last_modification_date_time>
 
   <!-- Begin attribute definitions -->
 
@@ -482,7 +482,19 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
-  
+  <DD_Attribute>
+    <name>keyword</name>
+    <version_id>1.0</version_id>
+    <local_identifier>keyword</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Identifies geological characteristics of a feature or target.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>  
   <!-- Start attributes for Observational_Intent -->
   
   <!-- End attribute definitions -->
@@ -514,7 +526,7 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>Observational_Intent</identifier_reference>
-      <reference_type>attribute_of</reference_type>
+      <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
@@ -721,6 +733,12 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>activity_notes</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>keyword</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
