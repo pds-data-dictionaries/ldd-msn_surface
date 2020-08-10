@@ -30,7 +30,8 @@
     
     1.2.0.0, Trent Hare
     - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes, keyword
-    - Add command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
+    - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
+    - Added several telemetry attibutes for MSL/M2020
   </comment>
   <last_modification_date_time>2020-08-07T13:08:00</last_modification_date_time>
 
@@ -441,6 +442,115 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
+  <DD_Attribute>
+    <name>telemetry_source_host_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>telemetry_source_host_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the name of the host venue that provided the telemetry source data used in the 
+      creation of this data set.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>expected_transmission_path</name>
+    <version_id>1.0</version_id>
+    <local_identifier>expected_transmission_path</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the planned transmission path (route) for the telemetry data. See also transmission_path and 
+      communication_session_id.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>transmission_path</name>
+    <version_id>1.0</version_id>
+    <local_identifier>transmission_path</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Indicates the actual transmission path (route) for the telemetry data. See also expected_transmission_path 
+      and communication_session_id.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>flight_software_mode</name>
+    <version_id>1.0</version_id>
+    <local_identifier>flight_software_mode</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the active flight software mode at the time of data product creation. Interpretation 
+      of specific modes is mission-dependent.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>telemetry_source_size</name>
+    <version_id>1.0</version_id>
+    <local_identifier>telemetry_source_size</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the length in bytes of the telemetry stream from which this product was derived.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>telemetry_source_checksum</name>
+    <version_id>1.0</version_id>
+    <local_identifier>telemetry_source_checksum</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the checksum for the telemetry stream from which this product was derived.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>auto_delete_flag</name>
+    <version_id>1.0</version_id>
+    <local_identifier>auto_delete_flag</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Indicates if the product was to be automatically deleted onboard after it is transmitted.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Boolean</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>virtual_channel_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>virtual_channel_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Specifies the type of data flowing in the telemetry virtual channel.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Integer</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
   <!-- End attributes for Telemetry -->
 
   <!-- Start attributes for Observational_Intent -->
@@ -720,6 +830,54 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>received_packets</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>telemetry_source_host_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>expected_transmission_path</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>transmission_path</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>flight_software_mode</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>telemetry_source_size</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>telemetry_source_checksum</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>auto_delete_flag</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>virtual_channel_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
