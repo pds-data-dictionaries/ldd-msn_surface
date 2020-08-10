@@ -33,6 +33,7 @@
     - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
     - Added several telemetry attibutes for MSL/M2020
     - Added Commanded_Parameters class with download_priority attribute
+    - update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
   </comment>
   <last_modification_date_time>2020-08-07T13:08:00</last_modification_date_time>
 
@@ -145,8 +146,9 @@
     <local_identifier>command_source_id</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Jordan Padams</submitter_name>
-    <definition> The command_source_id attribute specifies the flight software element that was the
-      source of a particular command. </definition>
+    <definition>Specifies where the command that triggered acquisition of this 
+      data came from. This may be "GROUND" for ground commanding, or the name of 
+      a flight software module that initiated the request.</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
