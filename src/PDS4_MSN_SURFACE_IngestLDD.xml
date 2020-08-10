@@ -32,6 +32,7 @@
     - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes, keyword
     - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
     - Added several telemetry attibutes for MSL/M2020
+    - Added Commanded_Parameters class with download_priority attribute
   </comment>
   <last_modification_date_time>2020-08-07T13:08:00</last_modification_date_time>
 
@@ -171,7 +172,6 @@
   </DD_Attribute>
 
   <!-- End attributes for Command_Execution -->
-
 
   <!-- Start attributes for Telemetry -->
   <DD_Attribute>
@@ -723,6 +723,30 @@
     </DD_Association>
   </DD_Class>
   <!-- End of Command_Execution Class Definition -->
+
+  <!-- Class: Commanded_Parameters -->
+  <DD_Class>
+    <name>Commanded_Parameters</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Commanded_Parameters</local_identifier>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>The Commanded_Parameters class contains attributes used to identify 
+      or describe the commands sent to a spacecraft to perform one or more 
+      actions resulting in the acquisition of the current data product. These are 
+      distinct from similar values in the root Surface_Mission_Information class 
+      which indicate the state of the data as acquired.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
+    <DD_Association>
+        <identifier_reference>download_priority</identifier_reference>
+        <reference_type>attribute_of</reference_type>
+        <minimum_occurrences>0</minimum_occurrences>
+        <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <!-- End of Commanded_Parameters Class Definition -->  
+  
+
 
   <!-- Start of Telemetry Class Definition -->
   <DD_Class>
