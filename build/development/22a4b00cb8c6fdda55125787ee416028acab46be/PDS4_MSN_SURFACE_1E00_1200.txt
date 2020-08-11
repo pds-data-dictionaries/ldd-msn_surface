@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Aug 04 22:39:59 UTC 2020
+   Time                   Tue Aug 11 14:55:42 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -29,12 +29,12 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                4
-   Attributes             30
-   Associations           33
+   Classes                5
+   Attributes             39
+   Associations           43
    Error messages         0
    Warning messages       1
-   Information messages   9
+   Information messages   11
 
 Detailed validation messages
    INFO     Attribute: <observation_id> - A 'nilable' attribute was found that is not a required attribute in at least one class.
@@ -44,12 +44,14 @@ Detailed validation messages
    INFO     Attribute: <sequence_execution_count> - The default minimum value provided by the attribute's data type is being overridden with 1
    INFO     Attribute: <command_source_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
    INFO     Attribute: <command_source_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+   INFO     Attribute: <command_dispatch_sclk> - The default minimum characters provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <command_dispatch_sclk> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <transport_protocol> - The default minimum characters provided by the attribute's data type is being overridden with 1
    INFO     Attribute: <transport_protocol> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <keyword> - This local attribute has a duplicate in the PDS4 data dictionary.
 
 Parsed Input - Header:
-   LDD Name               Surface Mission
+   LDD Name               Surface Mission Information
    LDD Version            1.2.0.0
    Full Name              Trent Hare
    Steward                img
@@ -71,8 +73,12 @@ Parsed Input - Header:
     
     1.2.0.0, Trent Hare
     - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes, keyword
+    - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
+    - Added several telemetry attibutes for MSL/M2020
+    - Added Commanded_Parameters class with download_priority attribute
+    - update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
   
-   Last Modification Time 2020-03-18T13:08:00
+   Last Modification Time 2020-08-07T13:08:00
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -120,7 +126,14 @@ Parsed Input - Attributes:
    name                   command_source_id
    version                1.14
    value data type        ASCII_Short_String_Collapsed
-   description             The command_source_id attribute specifies the flight software element that was the source of a particular command. 
+   description            Specifies where the command that triggered acquisition of this data came from. This may be "GROUND" for ground commanding, or the name of a flight software module that initiated the request.
+   minimum characters     1
+   maximum characters     255
+
+   name                   command_dispatch_sclk
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Specifies the spacecraft clock time at which the command execution was started.
    minimum characters     1
    maximum characters     255
 
@@ -211,6 +224,46 @@ Parsed Input - Attributes:
    value data type        ASCII_NonNegative_Integer
    description            The received_packets attribute provides the total number of telemetry packets actually used to construct this data product. cf. expected_packets.
 
+   name                   telemetry_source_host_name
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Specifies the name of the host venue that provided the telemetry source data used in the creation of this data set.
+
+   name                   expected_transmission_path
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Specifies the planned transmission path (route) for the telemetry data. See also transmission_path and communication_session_id.
+
+   name                   transmission_path
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Indicates the actual transmission path (route) for the telemetry data. See also expected_transmission_path and communication_session_id.
+
+   name                   flight_software_mode
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Specifies the active flight software mode at the time of data product creation. Interpretation of specific modes is mission-dependent.
+
+   name                   telemetry_source_size
+   version                1.14
+   value data type        ASCII_Integer
+   description            Specifies the length in bytes of the telemetry stream from which this product was derived.
+
+   name                   telemetry_source_checksum
+   version                1.14
+   value data type        ASCII_Integer
+   description            Specifies the checksum for the telemetry stream from which this product was derived.
+
+   name                   auto_delete_flag
+   version                1.14
+   value data type        ASCII_Boolean
+   description            Indicates if the product was to be automatically deleted onboard after it is transmitted.
+
+   name                   virtual_channel_id
+   version                1.14
+   value data type        ASCII_Integer
+   description            Specifies the type of data flowing in the telemetry virtual channel.
+
    name                   campaign
    version                1.14
    value data type        ASCII_Text_Preserved
@@ -299,12 +352,30 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      command_dispatch_sclk
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
       local identifier      observation_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
 
       local identifier      request_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Commanded_Parameters
+   description            The Commanded_Parameters class contains attributes used to identify or describe the commands sent to a spacecraft to perform one or more actions resulting in the acquisition of the current data product. These are distinct from similar values in the root Surface_Mission_Information class which indicate the state of the data as acquired.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      download_priority
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -398,6 +469,46 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      received_packets
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      telemetry_source_host_name
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      expected_transmission_path
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      transmission_path
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      flight_software_mode
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      telemetry_source_size
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      telemetry_source_checksum
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      auto_delete_flag
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      virtual_channel_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
