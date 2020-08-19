@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model 
-    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch"
+    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:msn="http://pds.nasa.gov/pds4/msn/v1" xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
   xsi:schemaLocation="https://pds.nasa.gov/pds4/pds/v1 
-    https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
+    https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
   <name>Surface Mission Information</name>
   <ldd_version_id>1.2.0.0</ldd_version_id>
+  <dictionary_type>Discipline</dictionary_type>
   <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
   <namespace_id>msn_surface</namespace_id>
@@ -33,7 +34,11 @@
     - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
     - Added several telemetry attibutes for MSL/M2020
     - Added Commanded_Parameters class with download_priority attribute
-    - update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
+    - Update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
+    - Added boot_counter, rtt_version attributes to Command_Execution
+    - Added activity_id, target_id attributes to Observational_Intent
+    - Update to PDS IM 1E00
+    
   </comment>
   <last_modification_date_time>2020-08-07T13:08:00</last_modification_date_time>
 
@@ -172,7 +177,41 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
-
+  <DD_Attribute>
+    <name>boot_counter</name>
+    <version_id>1.0</version_id>
+    <local_identifier>boot_counter</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Counter indicating the number of times the spacecraft flight software 
+      has been booted. The intent is that this is a global counter that can uniquely 
+      identify the current FSW boot, so other counters that reset at boot time can 
+      be disambiguated.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>rtt_version</name>
+    <version_id>1.0</version_id>
+    <local_identifier>rtt_version</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Identifies the version of the Round-Trip Tracking (RTT) 
+      system used to create metadata in this observation</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
   <!-- End attributes for Command_Execution -->
 
   <!-- Start attributes for Telemetry -->
@@ -623,10 +662,43 @@
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>  
+  <DD_Attribute>
+    <name>activity_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>activity_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Identifier specifying the activity this observation is a part of.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>target_id</name>
+    <version_id>1.0</version_id>
+    <local_identifier>target_id</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Trent Hare</submitter_name>
+    <definition>Identifier specifying the name or identifier of the primary target 
+      this observation is observing. This is distinct from the pds:Target class in 
+      that pds:Target typically refers to a large entity such as a planet or 
+      satellite, whereas this keyword is intended to capture much finer target 
+      information, for example a rock name or even a specific location on a rock.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <minimum_characters>1</minimum_characters>
+      <maximum_characters>255</maximum_characters>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
   <!-- Start attributes for Observational_Intent -->
   
   <!-- End attribute definitions -->
-
 
 
   <!-- Begin class definitions -->
@@ -719,6 +791,18 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>request_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>boot_counter</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>rtt_version</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -945,6 +1029,18 @@
     </DD_Association>
     <DD_Association>
       <identifier_reference>keyword</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>activity_id</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>target_id</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
