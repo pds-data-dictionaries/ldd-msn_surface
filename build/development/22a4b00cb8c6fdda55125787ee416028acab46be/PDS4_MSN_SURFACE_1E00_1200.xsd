@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.0.0 - Tue Aug 04 22:39:59 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.0.0 - Tue Aug 11 14:55:42 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.2.0.0 - msn_surface: - Surface Mission                                  -->
+  <!-- 1.2.0.0 - msn_surface: - Surface Mission Information                      -->
   <!--   file:/home/runner/work/ldd-msn_surface/ldd-msn_surface/src/PDS4_MSN_SUR -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -37,6 +37,10 @@
     
     1.2.0.0, Trent Hare
     - Added Observational_Intent class and attributes: campaign, goal, task, activity_notes, keyword
+    - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
+    - Added several telemetry attibutes for MSL/M2020
+    - Added Commanded_Parameters class with download_priority attribute
+    - update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
   
     </xs:documentation>
   </xs:annotation>
@@ -55,8 +59,24 @@
       <xs:element name="sequence_execution_count" type="msn_surface:sequence_execution_count" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="command_sequence_number" type="msn_surface:command_sequence_number" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="command_source_id" type="msn_surface:command_source_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="command_dispatch_sclk" type="msn_surface:command_dispatch_sclk" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="observation_id" nillable="true" type="msn_surface:observation_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="request_id" nillable="true" type="msn_surface:request_id" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Commanded_Parameters">
+    <xs:annotation>
+      <xs:documentation>The Commanded_Parameters class contains
+        attributes used to identify or describe the commands sent to a
+        spacecraft to perform one or more actions resulting in the
+        acquisition of the current data product. These are distinct from
+        similar values in the root Surface_Mission_Information class
+        which indicate the state of the data as
+        acquired.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="download_priority" type="msn_surface:download_priority" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -112,6 +132,14 @@
       <xs:element name="data_size" type="msn_surface:data_size" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="expected_packets" type="msn_surface:expected_packets" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="received_packets" type="msn_surface:received_packets" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="telemetry_source_host_name" type="msn_surface:telemetry_source_host_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="expected_transmission_path" type="msn_surface:expected_transmission_path" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="transmission_path" type="msn_surface:transmission_path" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="flight_software_mode" type="msn_surface:flight_software_mode" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="telemetry_source_size" type="msn_surface:telemetry_source_size" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="telemetry_source_checksum" type="msn_surface:telemetry_source_checksum" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="auto_delete_flag" type="msn_surface:auto_delete_flag" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="virtual_channel_id" type="msn_surface:virtual_channel_id" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="msn_surface:transport_protocol = ('Data Product', 'SFDU')"/> -->
@@ -176,6 +204,15 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="auto_delete_flag">
+    <xs:annotation>
+      <xs:documentation>Indicates if the product was to be automatically
+        deleted onboard after it is transmitted.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Boolean">
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="campaign">
     <xs:annotation>
       <xs:documentation>Identifies the long-term observational campaign
@@ -183,6 +220,17 @@
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Text_Preserved">
      <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="command_dispatch_sclk">
+    <xs:annotation>
+      <xs:documentation>Specifies the spacecraft clock time at which the
+        command execution was started.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -201,9 +249,10 @@
 
   <xs:simpleType name="command_source_id">
     <xs:annotation>
-      <xs:documentation> The command_source_id attribute specifies the
-        flight software element that was the source of a particular
-        command. </xs:documentation>
+      <xs:documentation>Specifies where the command that triggered
+        acquisition of this data came from. This may be "GROUND" for
+        ground commanding, or the name of a flight software module that
+        initiated the request.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -282,6 +331,30 @@
     	<xs:pattern value='[0-9]+'/>
      <xs:minInclusive value="0"/>
      <xs:maxInclusive value="18446744073709551615"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="expected_transmission_path">
+    <xs:annotation>
+      <xs:documentation>Specifies the planned transmission path (route)
+        for the telemetry data. See also transmission_path and
+        communication_session_id.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="flight_software_mode">
+    <xs:annotation>
+      <xs:documentation>Specifies the active flight software mode at the
+        time of data product creation. Interpretation of specific modes
+        is mission-dependent.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -454,6 +527,29 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="telemetry_source_checksum">
+    <xs:annotation>
+      <xs:documentation>Specifies the checksum for the telemetry stream
+        from which this product was derived.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="telemetry_source_host_name">
+    <xs:annotation>
+      <xs:documentation>Specifies the name of the host venue that
+        provided the telemetry source data used in the creation of this
+        data set.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="telemetry_source_name">
     <xs:annotation>
       <xs:documentation>The telemetry_source_name specifies the name
@@ -479,6 +575,17 @@
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="telemetry_source_size">
+    <xs:annotation>
+      <xs:documentation>Specifies the length in bytes of the telemetry
+        stream from which this product was derived.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="telemetry_source_start_time">
     <xs:annotation>
       <xs:documentation>The telemetry_source_start_time specifies the
@@ -488,6 +595,18 @@
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Date_Time_YMD_UTC">
   <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSSZ" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transmission_path">
+    <xs:annotation>
+      <xs:documentation>Indicates the actual transmission path (route)
+        for the telemetry data. See also expected_transmission_path and
+        communication_session_id.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -503,6 +622,17 @@
      <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="virtual_channel_id">
+    <xs:annotation>
+      <xs:documentation>Specifies the type of data flowing in the
+        telemetry virtual channel.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
  
   <xs:annotation>
     <xs:documentation>
@@ -511,7 +641,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Tue Aug 04 22:39:59 UTC 2020" ,
+      "Date": "Tue Aug 11 14:55:42 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "PropertyMapDictionary": [
       ]

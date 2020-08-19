@@ -51,4 +51,3 @@ Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://githu
 
 See the [PDS Data Dictionaries Support page](https://pds-data-dictionaries.github.io/support/) for more Support information.
 
-
