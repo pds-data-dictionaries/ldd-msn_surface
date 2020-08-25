@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        11.3.1
+   LDDTool Version        11.3.2
    LDD Version Id:        1.2.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Aug 11 14:55:42 UTC 2020
+   Time                   Tue Aug 25 18:10:23 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -30,11 +30,11 @@ Parameters:
 
 Summary:
    Classes                5
-   Attributes             39
-   Associations           43
+   Attributes             43
+   Associations           47
    Error messages         0
    Warning messages       1
-   Information messages   11
+   Information messages   19
 
 Detailed validation messages
    INFO     Attribute: <observation_id> - A 'nilable' attribute was found that is not a required attribute in at least one class.
@@ -46,9 +46,17 @@ Detailed validation messages
    INFO     Attribute: <command_source_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <command_dispatch_sclk> - The default minimum characters provided by the attribute's data type is being overridden with 1
    INFO     Attribute: <command_dispatch_sclk> - The default maximum characters provided by the attribute's data type is being overridden with 255
+   INFO     Attribute: <boot_counter> - The default minimum characters provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <boot_counter> - The default maximum characters provided by the attribute's data type is being overridden with 255
+   INFO     Attribute: <rtt_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <rtt_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <transport_protocol> - The default minimum characters provided by the attribute's data type is being overridden with 1
    INFO     Attribute: <transport_protocol> - The default maximum characters provided by the attribute's data type is being overridden with 255
    INFO     Attribute: <keyword> - This local attribute has a duplicate in the PDS4 data dictionary.
+   INFO     Attribute: <activity_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <activity_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+   INFO     Attribute: <target_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+   INFO     Attribute: <target_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
 
 Parsed Input - Header:
    LDD Name               Surface Mission Information
@@ -76,7 +84,11 @@ Parsed Input - Header:
     - Added command_dispatch_sclk to msn_surface:Command_Execution. Cardinality 0:1
     - Added several telemetry attibutes for MSL/M2020
     - Added Commanded_Parameters class with download_priority attribute
-    - update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
+    - Update command_source_id definition per GitHub PDS4-LDD-Issue-Repo/issues/37
+    - Added boot_counter, rtt_version attributes to Command_Execution
+    - Added activity_id, target_id attributes to Observational_Intent
+    - Update to PDS IM 1E00
+    
   
    Last Modification Time 2020-08-07T13:08:00
    PDS4 Merge Flag        false
@@ -134,6 +146,20 @@ Parsed Input - Attributes:
    version                1.14
    value data type        ASCII_Short_String_Collapsed
    description            Specifies the spacecraft clock time at which the command execution was started.
+   minimum characters     1
+   maximum characters     255
+
+   name                   boot_counter
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Counter indicating the number of times the spacecraft flight software has been booted. The intent is that this is a global counter that can uniquely identify the current FSW boot, so other counters that reset at boot time can be disambiguated.
+   minimum characters     1
+   maximum characters     255
+
+   name                   rtt_version
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifies the version of the Round-Trip Tracking (RTT) system used to create metadata in this observation
    minimum characters     1
    maximum characters     255
 
@@ -289,6 +315,20 @@ Parsed Input - Attributes:
    value data type        ASCII_Text_Preserved
    description            Identifies geological characteristics of a feature or target.
 
+   name                   activity_id
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifier specifying the activity this observation is a part of.
+   minimum characters     1
+   maximum characters     255
+
+   name                   target_id
+   version                1.14
+   value data type        ASCII_Short_String_Collapsed
+   description            Identifier specifying the name or identifier of the primary target this observation is observing. This is distinct from the pds:Target class in that pds:Target typically refers to a large entity such as a planet or satellite, whereas this keyword is intended to capture much finer target information, for example a rock name or even a specific location on a rock.
+   minimum characters     1
+   maximum characters     255
+
 Parsed Input - Classes:
 
    name                   Surface_Mission_Information
@@ -363,6 +403,16 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      request_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      boot_counter
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      rtt_version
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of
@@ -542,6 +592,16 @@ Parsed Input - Classes:
       reference type        attribute_of
 
       local identifier      keyword
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      activity_id
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      target_id
       minimum occurrences   0
       maximum occurrences   1
       reference type        attribute_of

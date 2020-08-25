@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Tue Aug 11 14:55:42 UTC 2020" ,
+      "Date": "Tue Aug 25 18:10:23 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -146,6 +146,38 @@
                  ]
               }
             }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.boot_counter" ,
+                "title": "boot_counter" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1090" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.boot_counter"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.rtt_version" ,
+                "title": "rtt_version" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1100" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.rtt_version"
+                 ]
+              }
+            }
            ]
           }
         }
@@ -269,6 +301,38 @@
                 "classOrder": "1050" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.keyword"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.activity_id" ,
+                "title": "activity_id" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1060" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.activity_id"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.target_id" ,
+                "title": "target_id" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1070" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.target_id"
                  ]
               }
             }
@@ -773,6 +837,31 @@
     , "attributeDictionary": [
         {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.boot_counter" ,
+            "title": "boot_counter" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.14" ,
+            "description": "Counter indicating the number of times the spacecraft flight software has been booted. The intent is that this is a global counter that can uniquely identify the current FSW boot, so other counters that reset at boot time can be disambiguated." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.command_dispatch_sclk" ,
             "title": "command_dispatch_sclk" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -898,6 +987,31 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.rtt_version" ,
+            "title": "rtt_version" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.14" ,
+            "description": "Identifies the version of the Round-Trip Tracking (RTT) system used to create metadata in this observation" ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.msn_surface.Command_Execution.msn_surface.sequence_execution_count" ,
             "title": "sequence_execution_count" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -998,6 +1112,31 @@
         }
       , {
           "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.activity_id" ,
+            "title": "activity_id" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.14" ,
+            "description": "Identifier specifying the activity this observation is a part of." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
             "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.activity_notes" ,
             "title": "activity_notes" ,
             "registrationAuthorityId": "0001_NASA_PDS_1" ,
@@ -1087,6 +1226,31 @@
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Text_Preserved" ,
             "minimumCharacters": "1" ,
             "maximumCharacters": "Unbounded" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Observational_Intent.msn_surface.target_id" ,
+            "title": "target_id" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.14" ,
+            "description": "Identifier specifying the name or identifier of the primary target this observation is observing. This is distinct from the pds:Target class in that pds:Target typically refers to a large entity such as a planet or satellite, whereas this keyword is intended to capture much finer target information, for example a rock name or even a specific location on a rock." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
             "minimumValue": "Unbounded" ,
             "maximumValue": "Unbounded" ,
             "pattern": "null" ,
