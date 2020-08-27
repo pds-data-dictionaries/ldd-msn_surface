@@ -38,9 +38,11 @@
     - Added boot_counter, rtt_version attributes to Command_Execution
     - Added activity_id, target_id attributes to Observational_Intent
     - Update to PDS IM 1E00
+    - Update sequence_execution_count to have a min=0
+    - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC 
     
   </comment>
-  <last_modification_date_time>2020-08-07T13:08:00</last_modification_date_time>
+  <last_modification_date_time>2020-08-26T13:08:00</last_modification_date_time>
 
   <!-- Begin attribute definitions -->
 
@@ -107,7 +109,7 @@
   </DD_Attribute>
   <DD_Attribute>
     <name>sequence_execution_count</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>sequence_execution_count</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Cristina De Cesare</submitter_name>
@@ -116,7 +118,7 @@
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_NonNegative_Integer</value_data_type>
-      <minimum_value>1</minimum_value>
+      <minimum_value>0</minimum_value>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
@@ -354,8 +356,8 @@
       to Spacecraft Event Time (SCET).</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Date_Time_YMD_UTC</value_data_type>
-      <formation_rule>yyyy-mm-ddThh:mm:ss.sssZ</formation_rule>
+      <value_data_type>ASCII_Date_Time_DOY_UTC</value_data_type>
+      <formation_rule>yyyy-dddThh:mm:ss.sssZ</formation_rule>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
