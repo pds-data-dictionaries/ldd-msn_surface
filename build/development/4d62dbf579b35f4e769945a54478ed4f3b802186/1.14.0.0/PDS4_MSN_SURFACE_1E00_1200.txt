@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Aug 27 19:30:40 UTC 2020
+   Time                   Tue Sep 01 23:04:01 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -31,7 +31,7 @@ Parameters:
 Summary:
    Classes                5
    Attributes             43
-   Associations           47
+   Associations           48
    Error messages         0
    Warning messages       1
    Information messages   19
@@ -90,9 +90,10 @@ Parsed Input - Header:
     - Update to PDS IM 1E00
     - Update sequence_execution_count to have a min=0
     - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC and formation_rule
+    - Added Commanded_Parameters to Surface_Mission_Information
     
   
-   Last Modification Time 2020-08-27T13:08:00
+   Last Modification Time 2020-09-01T16:02:00
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -357,6 +358,11 @@ Parsed Input - Classes:
       reference type        component_of
 
       local identifier      Observational_Intent
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
+
+      local identifier      Commanded_Parameters
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
