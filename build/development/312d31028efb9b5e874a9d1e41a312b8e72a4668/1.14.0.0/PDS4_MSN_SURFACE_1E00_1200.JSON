@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Thu Aug 27 19:30:40 UTC 2020" ,
+      "Date": "Tue Sep 01 23:09:21 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -412,6 +412,22 @@
                 "classOrder": "1030" ,
                 "classId": [
                   "0001_NASA_PDS_1.msn_surface.Observational_Intent"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Surface_Mission_Information.msn_surface.Commanded_Parameters" ,
+                "title": "Commanded_Parameters" ,
+                "assocType": "component_of" ,
+                "isAttribute": "false" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1050" ,
+                "classId": [
+                  "0001_NASA_PDS_1.msn_surface.Commanded_Parameters"
                  ]
               }
             }

@@ -3,11 +3,9 @@
     href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:msn="http://pds.nasa.gov/pds4/msn/v1" xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
-  xsi:schemaLocation="https://pds.nasa.gov/pds4/pds/v1 
-    https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
+  xsi:schemaLocation="https://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
   <name>Surface Mission Information</name>
   <ldd_version_id>1.2.0.0</ldd_version_id>
   <dictionary_type>Discipline</dictionary_type>
@@ -40,9 +38,10 @@
     - Update to PDS IM 1E00
     - Update sequence_execution_count to have a min=0
     - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC and formation_rule
+    - Added Commanded_Parameters to Surface_Mission_Information
     
   </comment>
-  <last_modification_date_time>2020-08-27T13:08:00</last_modification_date_time>
+  <last_modification_date_time>2020-09-01T16:02:00</last_modification_date_time>
 
   <!-- Begin attribute definitions -->
 
@@ -735,6 +734,12 @@
     <DD_Association>
       <identifier_reference>surface_gravity</identifier_reference>
       <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Commanded_Parameters</identifier_reference>
+      <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
