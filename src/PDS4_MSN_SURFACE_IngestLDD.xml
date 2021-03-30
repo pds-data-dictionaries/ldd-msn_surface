@@ -40,6 +40,9 @@
     - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC and formation_rule
     - Added Commanded_Parameters to Surface_Mission_Information
     
+    1.2.1.0, Trent Hare
+    - Added "Team-generated Image" under transport_protocol
+    
   </comment>
   <last_modification_date_time>2020-09-01T16:02:00</last_modification_date_time>
 
@@ -327,6 +330,11 @@
         <value>Data Product</value>
         <value_meaning>A complete file of raw telemetry as delivered from the 
           spacecraft to the ground.</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Team-generated Image</value>
+        <value_meaning>Image delivered from instrument team with no indication of 
+          what the actual protocol was.</value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
