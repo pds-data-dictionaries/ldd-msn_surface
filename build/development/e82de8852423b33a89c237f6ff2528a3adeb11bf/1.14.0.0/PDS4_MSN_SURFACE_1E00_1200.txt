@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Mar 29 23:59:08 UTC 2021
+   Time                   Tue Mar 30 00:12:10 UTC 2021
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -71,6 +71,9 @@ Parsed Input - Header:
     - Update sequence_execution_count to have a min=0
     - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC and formation_rule
     - Added Commanded_Parameters to Surface_Mission_Information
+    
+    1.2.1.0, Trent Hare
+    - Added "Team-generated Image" under transport_protocol
     
   
    Last Modification Time 2020-09-01T16:02:00
