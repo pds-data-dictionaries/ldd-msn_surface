@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.0.0 - Wed Oct 14 02:55:22 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.1.0 - Tue Mar 30 00:18:27 UTC 2021 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.2.0.0 - msn_surface: - Surface Mission Information                      -->
+  <!-- 1.2.1.0 - msn_surface: - Surface Mission Information                      -->
   <!--   file:/home/runner/work/ldd-msn_surface/ldd-msn_surface/src/PDS4_MSN_SUR -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,7 +14,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.2.0.0">
+    version="1.2.1.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
@@ -47,6 +47,9 @@
     - Update sequence_execution_count to have a min=0
     - Update telemetry_source_start_time to ASCII_Date_Time_DOY_UTC and formation_rule
     - Added Commanded_Parameters to Surface_Mission_Information
+    
+    1.2.1.0, Trent Hare
+    - Added "Team-generated Image" enumeration value under transport_protocol
     
   
     </xs:documentation>
@@ -154,7 +157,7 @@
       <xs:element name="virtual_channel_id" type="msn_surface:virtual_channel_id" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="msn_surface:transport_protocol = ('Data Product', 'SFDU')"/> -->
+    <!-- <xs:assert test="msn_surface:transport_protocol = ('Data Product', 'SFDU', 'Team-generated Image')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 

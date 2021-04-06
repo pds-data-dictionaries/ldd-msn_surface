@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.2.0.0 - Wed Oct 14 02:55:29 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.2.1.0 - Tue Mar 30 00:18:33 UTC 2021 -->
   <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -32,8 +32,8 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="msn_surface:Telemetry/msn_surface:transport_protocol">
-      <sch:assert test=". = ('Data Product', 'SFDU')">
-        The attribute msn_surface:transport_protocol must be equal to one of the following values 'Data Product', 'SFDU'.</sch:assert>
+      <sch:assert test=". = ('Data Product', 'SFDU', 'Team-generated Image')">
+        The attribute msn_surface:transport_protocol must be equal to one of the following values 'Data Product', 'SFDU', 'Team-generated Image'.</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

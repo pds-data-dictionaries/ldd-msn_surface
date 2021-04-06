@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.15.0.0" ,
-      "Date": "Tue Sep 08 20:47:35 UTC 2020" ,
+      "Date": "Tue Mar 30 00:18:33 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -1948,6 +1948,12 @@
             , {"PermissibleValue": {
                   "value": "SFDU" ,
                   "valueMeaning": "Standard Formatted Data Unit" ,
+                  "isDeprecated": "false"
+                }
+             }
+            , {"PermissibleValue": {
+                  "value": "Team-generated Image" ,
+                  "valueMeaning": "Image delivered from instrument team with no indication of what the actual protocol was." ,
                   "isDeprecated": "false"
                 }
              }
