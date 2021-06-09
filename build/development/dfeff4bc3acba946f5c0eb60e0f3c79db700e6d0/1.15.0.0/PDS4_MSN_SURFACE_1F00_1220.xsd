@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.1.0 - Wed Jun 09 23:28:33 UTC 2021 -->
+  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.2.0 - Wed Jun 09 23:38:09 UTC 2021 -->
   <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.15.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.2.1.0 - msn_surface: - Surface Mission Information                      -->
+  <!-- 1.2.2.0 - msn_surface: - Surface Mission Information                      -->
   <!--   file:/home/runner/work/ldd-msn_surface/ldd-msn_surface/src/PDS4_MSN_SUR -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,7 +14,7 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.2.1.0">
+    version="1.2.2.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd"/>
  
@@ -50,6 +50,9 @@
     
     1.2.1.0, Trent Hare
     - Added "Team-generated Image" enumeration value under transport_protocol
+    
+    1.2.2.0 T.Hare
+    = Added telemetry_alternate_name
     
   
     </xs:documentation>
@@ -136,6 +139,7 @@
       <xs:element name="provider_id" type="msn_surface:provider_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="flight_software_version_id" type="msn_surface:flight_software_version_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="telemetry_source_name" type="msn_surface:telemetry_source_name" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="telemetry_alternate_name" type="msn_surface:telemetry_alternate_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="transport_protocol" type="msn_surface:transport_protocol" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="communication_session_id" type="msn_surface:communication_session_id" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="telemetry_source_start_time" type="msn_surface:telemetry_source_start_time" minOccurs="0" maxOccurs="1"> </xs:element>
@@ -592,6 +596,19 @@
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Text_Preserved">
      <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="telemetry_alternate_name">
+    <xs:annotation>
+      <xs:documentation>The telemetry_alternate_name is similar to
+        telemetry_source_name but specifies an alternate name that may
+        be used to additionally identify the source of the telemetry
+        data in the parent class.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 

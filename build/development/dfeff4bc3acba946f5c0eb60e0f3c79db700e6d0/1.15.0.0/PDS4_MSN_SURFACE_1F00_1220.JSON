@@ -3,8 +3,8 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "IM Version": "1.15.0.0" ,
-      "LDD Version": "1.2.1.0" ,
-      "Date": "Wed Jun 09 23:28:33 UTC 2021" ,
+      "LDD Version": "1.2.2.0" ,
+      "Date": "Wed Jun 09 23:38:09 UTC 2021" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "namespaces": ["pds:", "msn_surface:"] ,
       "classDictionary": [
@@ -545,6 +545,22 @@
               }
             }
            , {"association": {
+                "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_alternate_name" ,
+                "title": "telemetry_alternate_name" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1070" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_alternate_name"
+                 ]
+              }
+            }
+           , {"association": {
                 "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.transport_protocol" ,
                 "title": "transport_protocol" ,
                 "assocType": "attribute_of" ,
@@ -554,7 +570,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1070" ,
+                "classOrder": "1080" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.transport_protocol"
                  ]
@@ -570,7 +586,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1080" ,
+                "classOrder": "1090" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.communication_session_id"
                  ]
@@ -586,7 +602,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1090" ,
+                "classOrder": "1100" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_start_time"
                  ]
@@ -602,7 +618,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1100" ,
+                "classOrder": "1110" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_sclk_start"
                  ]
@@ -618,7 +634,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1110" ,
+                "classOrder": "1120" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.product_completion_status"
                  ]
@@ -634,7 +650,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1120" ,
+                "classOrder": "1130" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.earth_received_start_date_time"
                  ]
@@ -650,7 +666,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1130" ,
+                "classOrder": "1140" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.earth_received_stop_date_time"
                  ]
@@ -666,7 +682,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1140" ,
+                "classOrder": "1150" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.download_priority"
                  ]
@@ -682,7 +698,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1150" ,
+                "classOrder": "1160" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.data_size"
                  ]
@@ -698,7 +714,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1160" ,
+                "classOrder": "1170" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.expected_packets"
                  ]
@@ -714,7 +730,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1170" ,
+                "classOrder": "1180" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.received_packets"
                  ]
@@ -730,7 +746,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1180" ,
+                "classOrder": "1190" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_host_name"
                  ]
@@ -746,7 +762,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1190" ,
+                "classOrder": "1200" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.expected_transmission_path"
                  ]
@@ -762,7 +778,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1200" ,
+                "classOrder": "1210" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.transmission_path"
                  ]
@@ -778,7 +794,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1210" ,
+                "classOrder": "1220" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.flight_software_mode"
                  ]
@@ -794,7 +810,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1220" ,
+                "classOrder": "1230" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_size"
                  ]
@@ -810,7 +826,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1230" ,
+                "classOrder": "1240" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_source_checksum"
                  ]
@@ -826,7 +842,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1240" ,
+                "classOrder": "1250" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.auto_delete_flag"
                  ]
@@ -842,7 +858,7 @@
                 "groupName": "null" ,
                 "minimumCardinality": "0" ,
                 "maximumCardinality": "1" ,
-                "classOrder": "1250" ,
+                "classOrder": "1260" ,
                 "attributeId": [
                   "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.virtual_channel_id"
                  ]
@@ -1736,6 +1752,31 @@
             "minimumValue": "0" ,
             "maximumValue": "18446744073709551615" ,
             "pattern": "[0-9]+" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.msn_surface.Telemetry.msn_surface.telemetry_alternate_name" ,
+            "title": "telemetry_alternate_name" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "msn_surface" ,
+            "steward": "img" ,
+            "versionId": "1.15" ,
+            "description": "The telemetry_alternate_name is similar to telemetry_source_name but specifies an alternate name that may be used to additionally identify the source of the telemetry data in the parent class." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
             "unitOfMeasure": "null" ,
             "unitOfMeasureId": "null" ,
             "unitId": "null" ,
