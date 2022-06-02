@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.2.0 - Mon Nov 01 16:38:38 UTC 2021 -->
+  <!-- PDS4 XML/Schema for Name Space Id:msn_surface  Version:1.2.2.0 - Thu Jun 02 19:17:43 UTC 2022 -->
   <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.17.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.2.2.0 - msn_surface: - Surface Mission Information                      -->
-  <!--   file:/home/runner/work/ldd-msn_surface/ldd-msn_surface/src/PDS4_MSN_SUR -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/msn_surface/v1"

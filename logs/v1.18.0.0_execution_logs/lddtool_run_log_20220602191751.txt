@@ -1,12 +1,12 @@
 
->>  INFO LDDTOOL Version: 13.1.0
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO LDDTOOL Version: 14.0.1
+>>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Mon Nov 01 16:38:38 UTC 2021
->>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  INFO IM Label Version Id: 1.24
+>>  INFO Date: Thu Jun 02 19:17:51 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:msn_surface
 >>> INFO Init:  - Config.Properties Namespace Id Using:msn_surface
@@ -31,16 +31,15 @@
 >>> INFO Attribute: <target_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <target_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
 >>> WARNING Attribute: <product_completion_status> - An attribute with the enumeration_flag = false must not have any permissible values.
->>> WARNING Header:  - New namespace id has been specified:msn_surface
 
  -- LDDTool Execution Summary --
-     2 warning(s)
+     1 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1I00
      - PDS4 Flag: true
      - LDD Flag: true
      - Export JSON Flag: true
@@ -49,9 +48,9 @@ Input:
 
 Output:
 
-     - ./PDS4_MSN_SURFACE_1H00_1220.xsd
-     - ./PDS4_MSN_SURFACE_1H00_1220.sch
-     - ./PDS4_MSN_SURFACE_1H00_1220.xml
-     - ./PDS4_MSN_SURFACE_1H00_1220.JSON
+     - ./PDS4_MSN_SURFACE_1I00_1220.xsd
+     - ./PDS4_MSN_SURFACE_1I00_1220.sch
+     - ./PDS4_MSN_SURFACE_1I00_1220.xml
+     - ./PDS4_MSN_SURFACE_1I00_1220.JSON
 
 >>  INFO Exit(0)
