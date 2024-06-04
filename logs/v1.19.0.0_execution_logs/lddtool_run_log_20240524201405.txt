@@ -1,0 +1,55 @@
+
+>>  INFO LDDTOOL Version: 15.1.0
+>>  INFO IM Version Id: 1.19.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.25
+>>  INFO Date: Fri May 24 20:14:05 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.1.0/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Found:msn_surface
+>>> INFO Init:  - Config.Properties Namespace Id Using:msn_surface
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <observation_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <request_id> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <surface_gravity> - The default minimum value provided by the attribute's data type is being overridden with 0.0
+>>> INFO Attribute: <sequence_execution_count> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <command_source_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <command_source_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <command_dispatch_sclk> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <command_dispatch_sclk> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <boot_counter> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <boot_counter> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <rtt_version> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <rtt_version> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <transport_protocol> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <transport_protocol> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <keyword> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <activity_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <activity_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> INFO Attribute: <target_id> - The default minimum characters provided by the attribute's data type is being overridden with 1
+>>> INFO Attribute: <target_id> - The default maximum characters provided by the attribute's data type is being overridden with 255
+>>> WARNING Attribute: <product_completion_status> - An attribute with the enumeration_flag = false must not have any permissible values.
+
+ -- LDDTool Execution Summary --
+     1 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1J00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-msn_surface/ldd-msn_surface/src/PDS4_MSN_SURFACE_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_MSN_SURFACE_1J00_1220.xsd
+     - ./PDS4_MSN_SURFACE_1J00_1220.sch
+     - ./PDS4_MSN_SURFACE_1J00_1220.xml
+     - ./export/JSON/PDS4_PDS_1J00.JSON
+
+>>  INFO Exit(0)
