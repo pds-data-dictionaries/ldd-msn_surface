@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.3.1.0 - Thu Sep 03 22:07:55 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:msn_surface  Version:1.3.1.0 - Thu Nov 19 22:33:17 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.25.0.0 - System Build 16.0	 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -18,27 +18,6 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
-  <sch:pattern>
-    <sch:rule context="msn_surface:Command_Execution/msn_surface:command_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>msn_surface:Command_Execution/msn_surface:command_duration/msn_surface:command_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="msn_surface:Command_Execution/msn_surface:expected_command_duration">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>msn_surface:Command_Execution/msn_surface:expected_command_duration/msn_surface:expected_command_duration</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="msn_surface:Surface_Mission_Information/msn_surface:surface_gravity">
-      <sch:assert test="@unit = ('cm/s**2', 'km/s**2', 'm/s**2')">
-        <title>msn_surface:Surface_Mission_Information/msn_surface:surface_gravity/msn_surface:surface_gravity</title>
-        The attribute @unit must be equal to one of the following values 'cm/s**2', 'km/s**2', 'm/s**2'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
   <sch:pattern>
     <sch:rule context="msn_surface:Telemetry">
       <sch:assert test="if (msn_surface:auto_delete_flag) then msn_surface:auto_delete_flag = ('true', 'false') else true()">
